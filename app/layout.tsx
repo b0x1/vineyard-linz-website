@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Next.js Static App",
-  description: "Set up by Jules",
+  title: "Vineyard Linz",
+  description: "Willkommen bei der Vineyard Linz",
 };
 
 export default function RootLayout({
@@ -12,9 +14,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="antialiased">
-        {children}
+    <html lang="de">
+      <body className="antialiased flex flex-col min-h-screen">
+        <Header />
+        <main className="flex-grow">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );
