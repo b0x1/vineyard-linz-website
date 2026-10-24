@@ -8,8 +8,8 @@ const { name, email } = Astro.props;
 ---
 
 <div class="bg-white p-8">
-  <h3 class="text-2xl font-bold text-gray-900 mb-6 uppercase tracking-wider border-b-4 border-brand inline-block">{name}</h3>
-  <div class="text-gray-600 mb-6 leading-relaxed prose prose-slate">
+  <h3 class="mb-6 inline-block border-b-4 border-brand text-2xl font-bold uppercase tracking-wider text-ink">{name}</h3>
+  <div class="prose mb-6 leading-relaxed text-ink">
     <slot />
   </div>
   <a href={`mailto:${email}`} class="text-brand font-bold hover:underline">

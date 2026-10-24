@@ -3,10 +3,10 @@ import Base from '../layouts/Base.astro';
 ---
 
 <Base title="Seite nicht gefunden" description="Diese Seite gibt es nicht.">
-  <div class="bg-brand py-8 text-center text-white">
-    <h1 class="text-3xl md:text-4xl font-bold uppercase tracking-widest">Seite nicht gefunden</h1>
+  <div class="px-4 py-20 text-center">
+    <h1 class="text-3xl font-bold uppercase tracking-tight text-ink md:text-5xl">Seite nicht gefunden</h1>
+    <p class="mt-8">
+      <a class="font-bold text-brand-blue" href={import.meta.env.BASE_URL}>Zur Startseite</a>
+    </p>
   </div>
-  <p class="text-center py-16">
-    <a class="text-brand font-bold" href={import.meta.env.BASE_URL}>Zur Startseite</a>
-  </p>
 </Base>

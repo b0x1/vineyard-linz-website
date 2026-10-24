@@ -1,51 +1,41 @@
 ---
 import { footerLinks, socialLinks } from '../data/nav';
 import { withBase } from '../lib/withBase';
+import OptimizedImage from './OptimizedImage.astro';
 ---
 
-<footer class="bg-white py-12 border-t border-gray-100">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex flex-col items-center mb-8">
-      <a href={import.meta.env.BASE_URL} class="mb-8">
-        <img
-          src={withBase('/images/vlinz-logo-mono-red.png')}
-          alt="Vineyard Linz Logo"
-          width="229"
-          height="46"
-          class="h-auto"
-        />
-      </a>
-      <nav class="flex flex-wrap justify-center gap-x-6 gap-y-3 mb-8">
-        {footerLinks.map((link) => (
-          <a
-            href={withBase(link.href)}
-            class="text-sm text-gray-600 hover:text-brand transition-colors text-center"
-          >
+<footer class="bg-[#181516] py-16 text-white">
+  <div class="mx-auto grid max-w-6xl items-center gap-12 px-4 md:grid-cols-2">
+    <nav class="flex flex-col gap-2">
+      {
+        footerLinks.map((link) => (
+          <a href={withBase(link.href)} class="text-sm text-white/80 hover:text-brand-gold">
             {link.name}
           </a>
-        ))}
-      </nav>
-      <div class="flex space-x-4">
-        {socialLinks.map((social) => (
-          <a
-            href={withBase(social.href)}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="hover:opacity-80 transition-opacity"
-          >
-            <img
-              src={withBase(social.icon)}
-              alt={social.name}
-              width="32"
-              height="32"
-              class="w-8 h-8 object-contain"
-            />
-          </a>
-        ))}
-      </div>
-    </div>
-    <div class="text-center text-xs text-gray-400 mt-8">
-      &copy; {new Date().getFullYear()} Vineyard Linz. Alle Rechte vorbehalten.
-    </div>
+        ))
+      }
+    </nav>
+    <a href={import.meta.env.BASE_URL} class="justify-self-center md:justify-self-end">
+      <OptimizedImage
+        src="/images/vlinz-logo-mono-red.png"
+        alt="Vineyard Linz"
+        width={458}
+        class="h-auto w-full max-w-md"
+      />
+    </a>
   </div>
+  <div class="mt-10 flex justify-center gap-4">
+    {
+      socialLinks.map((social) => (
+        <a
+          href={withBase(social.href)}
+          target={social.href.startsWith('http') ? '_blank' : undefined}
+          rel={social.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+        >
+          <OptimizedImage src={social.icon} alt={social.name} width={32} height={32} class="h-8 w-8 object-contain" />
+        </a>
+      ))
+    }
+  </div>
+  <p class="mt-8 text-center text-xs text-white/50">&copy; {new Date().getFullYear()} Vineyard Linz. Alle Rechte vorbehalten.</p>
 </footer>

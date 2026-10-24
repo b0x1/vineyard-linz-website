@@ -1,5 +1,5 @@
 ---
-import { withBase } from '../../lib/withBase';
+import OptimizedImage from '../OptimizedImage.astro';
 
 interface Props {
   author: string;
@@ -9,16 +9,18 @@ interface Props {
 const { author, image } = Astro.props;
 ---
 
-<section class="py-16 bg-gray-50 border-y border-gray-100">
-  <div class="max-w-4xl mx-auto px-4 text-center">
-    {image && (
-      <div class="flex justify-center mb-6">
-        <img src={withBase(image)} alt="" width="60" height="60" class="w-12 h-12" />
-      </div>
-    )}
-    <blockquote class="text-2xl md:text-3xl italic text-gray-800 mb-6 leading-snug">
-      &bdquo;<slot />&ldquo;
+<section class="bg-white px-4 py-16">
+  <div class="mx-auto max-w-3xl text-center text-ink">
+    {
+      image && (
+        <OptimizedImage src={image} alt="" width={64} height={64} class="mx-auto mb-6 h-12 w-12" />
+      )
+    }
+    <p class="text-7xl font-bold leading-none" aria-hidden="true">„</p>
+    <blockquote class="text-xl italic leading-relaxed md:text-2xl">
+      <slot />
     </blockquote>
-    <cite class="text-brand font-bold not-italic uppercase tracking-wider">{author}</cite>
+    <p class="text-7xl font-bold leading-none" aria-hidden="true">“</p>
+    <cite class="mt-4 block font-bold uppercase not-italic tracking-wider text-brand-red">{author}</cite>
   </div>
 </section>

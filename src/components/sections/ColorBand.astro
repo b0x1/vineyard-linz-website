@@ -1,0 +1,16 @@
+---
+interface Props {
+  color: 'red' | 'blue' | 'yellow';
+}
+
+const { color } = Astro.props;
+const bands = {
+  red: 'bg-[rgb(192,22,39)]',
+  blue: 'bg-[rgb(13,116,176)]',
+  yellow: 'bg-[rgb(248,210,31)]',
+};
+---
+
+<section class:list={['px-4 py-12 text-center', bands[color]]}>
+  <p class="text-3xl font-normal text-ink md:text-5xl"><slot /></p>
+</section>

@@ -1,0 +1,42 @@
+---
+import { Image } from 'astro:assets';
+import { resolveImage } from '../lib/images';
+import { withBase } from '../lib/withBase';
+
+interface Props {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  class?: string;
+  widths?: number[];
+  sizes?: string;
+}
+
+const { src, alt, width, height, class: className, widths, sizes } = Astro.props;
+const image = resolveImage(src);
+const format = src.endsWith('.png') ? 'png' : 'webp';
+const fittedWidth = image && width ? Math.min(width, image.width) : width;
+const fittedHeight =
+  image && height && width && fittedWidth ? Math.round((height * fittedWidth) / width) : height;
+const fittedWidths = image && widths
+  ? [...new Set(widths.map((value) => Math.min(value, image.width)))].sort((a, b) => a - b)
+  : widths;
+---
+
+{
+  image ? (
+    <Image
+      src={image}
+      alt={alt}
+      width={fittedWidth}
+      height={fittedHeight}
+      widths={fittedWidths}
+      sizes={sizes}
+      format={format}
+      class={className}
+    />
+  ) : (
+    <img src={withBase(src)} alt={alt} width={width} height={height} class={className} />
+  )
+}

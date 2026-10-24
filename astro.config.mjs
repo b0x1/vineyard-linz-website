@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
+import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 import { fileURLToPath } from 'node:url';
 import { mdxAutoImport } from './src/plugins/mdxAutoImport.mjs';
@@ -19,16 +20,30 @@ const mdxComponents = {
   GoogleForm: '@/components/sections/GoogleForm.astro',
   ChurchSuite: '@/components/sections/ChurchSuite.astro',
   Image: '@/components/sections/Image.astro',
+  PhotoHero: '@/components/sections/PhotoHero.astro',
+  PatternBand: '@/components/sections/PatternBand.astro',
+  PhotoTitle: '@/components/sections/PhotoTitle.astro',
+  ColorBand: '@/components/sections/ColorBand.astro',
+  GiantQuote: '@/components/sections/GiantQuote.astro',
+  OutlineLink: '@/components/sections/OutlineLink.astro',
 };
 
 export default defineConfig({
   site: 'https://b0x1.github.io',
   base,
   trailingSlash: 'always',
+  image: {
+    service: {
+      entrypoint: 'astro/assets/services/sharp',
+    },
+  },
   integrations: [
     mdxAutoImport(mdxComponents),
     mdx({
       rehypePlugins: [[rehypeBaseLinks, base]],
+    }),
+    sitemap({
+      filter: (page) => !page.includes('/404'),
     }),
   ],
   vite: {

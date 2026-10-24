@@ -1,0 +1,14 @@
+---
+import { getImage } from 'astro:assets';
+import pattern from '../../assets/images/brand-pattern.jpg';
+
+const background = await getImage({ src: pattern, width: 1600, format: 'webp' });
+---
+
+<section class="bg-cover bg-center" style={`background-image: url('${background.src}')`}>
+  <div class="bg-white/80">
+    <div class="prose prose-lg mx-auto max-w-3xl px-4 py-16 prose-headings:font-sans prose-headings:text-ink prose-p:text-ink prose-a:text-brand-blue">
+      <slot />
+    </div>
+  </div>
+</section>

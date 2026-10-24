@@ -2,7 +2,21 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --color-brand: #b91c1c;
-  --color-brand-dark: #991b1b;
-  --color-brand-light: #ef4444;
+  --font-sans: "Asap", ui-sans-serif, system-ui, sans-serif;
+  --color-ink: #1a1617;
+  --color-brand: #bd1a2a;
+  --color-brand-dark: #8f1420;
+  --color-brand-gold: #f8d21f;
+  --color-brand-blue: #0d74ae;
+  --color-brand-red: #bd1a2a;
+  --color-brand-magenta: #e2068c;
+  --color-brand-orange: #e07e27;
+}
+
+.prose {
+  --tw-prose-body: #1a1617;
+  --tw-prose-headings: #1a1617;
+  --tw-prose-bold: #1a1617;
+  --tw-prose-links: #0d74ae;
+  font-family: var(--font-sans);
 }

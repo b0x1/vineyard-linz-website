@@ -1,5 +1,5 @@
 ---
-import { withBase } from '../../lib/withBase';
+import OptimizedImage from '../OptimizedImage.astro';
 
 interface Props {
   name: string;
@@ -10,8 +10,14 @@ const { name, image } = Astro.props;
 ---
 
 <div class="flex flex-col items-center">
-  <div class="relative w-full aspect-[4/3] max-w-2xl overflow-hidden rounded-lg shadow-lg mb-4 pointer-events-none">
-    <img src={withBase(image)} alt={name} class="absolute inset-0 h-full w-full object-cover" />
+  <div class="relative mb-4 aspect-[4/3] w-full max-w-2xl overflow-hidden rounded-lg shadow-lg">
+    <OptimizedImage
+      src={image}
+      alt={name}
+      widths={[480, 800, 1200]}
+      sizes="(min-width: 768px) 672px, 100vw"
+      class="absolute inset-0 h-full w-full object-cover"
+    />
   </div>
-  <p class="text-xl font-bold text-gray-900">{name}</p>
+  <p class="text-xl font-bold text-ink">{name}</p>
 </div>

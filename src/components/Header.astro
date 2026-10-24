@@ -1,100 +1,21 @@
 ---
 import { headerLinks } from '../data/nav';
 import { withBase } from '../lib/withBase';
+import OptimizedImage from './OptimizedImage.astro';
 ---
 
-<header class="bg-white sticky top-0 z-50 border-b border-gray-100">
-  <nav class="mx-auto flex max-w-7xl items-center justify-between p-4 lg:px-8" aria-label="Global">
-    <div class="flex lg:flex-1">
-      <a href={import.meta.env.BASE_URL} class="-m-1.5 p-1.5">
-        <span class="sr-only">Vineyard Linz</span>
-        <img
-          class="h-12 w-auto"
-          src={withBase('/images/vlinz-sq-icon-transparent.png')}
-          alt="Vineyard Linz Logo"
-          width="48"
-          height="48"
-        />
-      </a>
-    </div>
-    <div class="flex lg:hidden">
-      <button
-        id="mobile-menu-open"
-        type="button"
-        class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-      >
-        <span class="sr-only">Menü öffnen</span>
-        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
-        </svg>
-      </button>
-    </div>
-    <div class="hidden lg:flex lg:gap-x-8">
-      {headerLinks.map((item) => (
-        <a
-          href={withBase(item.href)}
-          class="text-sm font-bold tracking-wider text-gray-900 hover:text-brand transition-colors"
-        >
+<header class="sticky top-0 z-50 bg-black/[0.07] backdrop-blur-sm">
+  <nav class="mx-auto flex max-w-6xl flex-wrap items-center gap-x-6 gap-y-1 px-4 py-3" aria-label="Global">
+    <a href={import.meta.env.BASE_URL} class="mr-2 shrink-0">
+      <span class="sr-only">Vineyard Linz</span>
+      <OptimizedImage src="/images/vlinz-sq-icon-cmyk.png" alt="" width={56} height={56} class="h-12 w-12" />
+    </a>
+    {
+      headerLinks.map((item) => (
+        <a href={withBase(item.href)} class:list={['text-xl font-bold tracking-tight md:text-2xl', item.color]}>
           {item.name}
         </a>
-      ))}
-    </div>
+      ))
+    }
   </nav>
-
-  <div id="mobile-menu" class="lg:hidden" hidden>
-    <div id="mobile-menu-backdrop" class="fixed inset-0 z-50 bg-black/20 backdrop-blur-sm"></div>
-    <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm">
-      <div class="flex items-center justify-between">
-        <a href={import.meta.env.BASE_URL} class="-m-1.5 p-1.5">
-          <span class="sr-only">Vineyard Linz</span>
-          <img
-            class="h-10 w-auto"
-            src={withBase('/images/vlinz-sq-icon-transparent.png')}
-            alt="Vineyard Linz Logo"
-            width="40"
-            height="40"
-          />
-        </a>
-        <button id="mobile-menu-close" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
-          <span class="sr-only">Menü schließen</span>
-          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
-          </svg>
-        </button>
-      </div>
-      <div class="mt-6 flow-root">
-        <div class="-my-6 divide-y divide-gray-500/10">
-          <div class="space-y-2 py-6">
-            {headerLinks.map((item) => (
-              <a
-                href={withBase(item.href)}
-                class="-mx-3 block rounded-lg px-3 py-2 text-base font-bold tracking-wider text-gray-900 hover:bg-gray-50"
-              >
-                {item.name}
-              </a>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 </header>
-
-<script>
-  const menu = document.getElementById('mobile-menu');
-  const openButton = document.getElementById('mobile-menu-open');
-  const closeButton = document.getElementById('mobile-menu-close');
-  const backdrop = document.getElementById('mobile-menu-backdrop');
-
-  function setOpen(open: boolean) {
-    if (!menu) return;
-    menu.hidden = !open;
-  }
-
-  openButton?.addEventListener('click', () => setOpen(true));
-  closeButton?.addEventListener('click', () => setOpen(false));
-  backdrop?.addEventListener('click', () => setOpen(false));
-  menu?.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => setOpen(false));
-  });
-</script>

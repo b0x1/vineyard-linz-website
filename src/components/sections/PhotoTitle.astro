@@ -1,0 +1,43 @@
+---
+import { Image } from 'astro:assets';
+import { resolveImage } from '../../lib/images';
+
+interface Props {
+  image: string;
+  title: string;
+  wash: 'red' | 'blue' | 'yellow';
+}
+
+const { image, title, wash } = Astro.props;
+const photo = resolveImage(image);
+const photoWidths = photo
+  ? [...new Set([640, 1200, 1800].map((value) => Math.min(value, photo.width)))].sort((a, b) => a - b)
+  : [];
+const washes = {
+  red: 'bg-[rgba(192,22,39,0.45)]',
+  blue: 'bg-[rgba(13,116,176,0.45)]',
+  yellow: 'bg-[rgba(249,209,32,0.35)]',
+};
+const titles = {
+  red: 'text-brand-red',
+  blue: 'text-brand-blue',
+  yellow: 'text-brand-gold',
+};
+---
+
+<section class="relative flex min-h-[280px] items-center justify-center overflow-hidden px-4 py-16 text-center">
+  {
+    photo && (
+      <Image
+        src={photo}
+        alt=""
+        widths={photoWidths}
+        sizes="100vw"
+        format="webp"
+        class="absolute inset-0 h-full w-full object-cover"
+      />
+    )
+  }
+  <div class:list={['absolute inset-0', washes[wash]]}></div>
+  <h2 class:list={['relative text-4xl font-bold uppercase tracking-tight md:text-7xl', titles[wash]]}>{title}</h2>
+</section>

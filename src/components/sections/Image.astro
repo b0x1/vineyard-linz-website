@@ -1,5 +1,5 @@
 ---
-import { withBase } from '../../lib/withBase';
+import OptimizedImage from '../OptimizedImage.astro';
 
 interface Props {
   src: string;
@@ -11,4 +11,4 @@ interface Props {
 const { src, alt, width, height } = Astro.props;
 ---
 
-<img src={withBase(src)} alt={alt} width={width} height={height} class="h-auto max-w-full" />
+<OptimizedImage src={src} alt={alt} width={width} height={height} class="h-auto max-w-full" />

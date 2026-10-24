@@ -10,7 +10,9 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
-const documentTitle = title === 'Vineyard Linz' ? title : `${title} | Vineyard Linz`;
+const documentTitle = title.includes('Kirche Lebt Liebe')
+  ? title
+  : `${title} - Vineyard Linz - Kirche Lebt Liebe`;
 ---
 
 <!doctype html>
@@ -19,10 +21,14 @@ const documentTitle = title === 'Vineyard Linz' ? title : `${title} | Vineyard L
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
-    <link rel="icon" href={withBase('/favicon.ico')} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+    <link rel="icon" href={withBase('/favicon.png')} />
+    <link rel="sitemap" type="application/xml" href={withBase('/sitemap-index.xml')} />
     <title>{documentTitle}</title>
   </head>
-  <body class="antialiased flex flex-col min-h-screen bg-white text-gray-900">
+  <body class="flex min-h-screen flex-col bg-white font-sans text-lg text-ink antialiased">
     <Header />
     <main class="flex-grow">
       <slot />

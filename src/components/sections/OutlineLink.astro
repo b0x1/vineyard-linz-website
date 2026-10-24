@@ -1,0 +1,18 @@
+---
+import { withBase } from '../../lib/withBase';
+
+interface Props {
+  href: string;
+}
+
+const { href } = Astro.props;
+---
+
+<p class="bg-white px-4 py-10 text-center">
+  <a
+    href={withBase(href)}
+    class="inline-block border-[3px] border-black px-8 py-5 text-xl uppercase tracking-wide text-ink hover:bg-black hover:text-white"
+  >
+    <slot />
+  </a>
+</p>
