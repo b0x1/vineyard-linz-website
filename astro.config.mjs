@@ -1,4 +1,5 @@
 import { defineConfig } from 'astro/config';
+import { unified } from '@astrojs/markdown-remark';
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
@@ -32,6 +33,11 @@ export default defineConfig({
   site: 'https://b0x1.github.io',
   base,
   trailingSlash: 'always',
+  markdown: {
+    processor: unified({
+      rehypePlugins: [[rehypeBaseLinks, base]],
+    }),
+  },
   image: {
     service: {
       entrypoint: 'astro/assets/services/sharp',
@@ -39,9 +45,7 @@ export default defineConfig({
   },
   integrations: [
     mdxAutoImport(mdxComponents),
-    mdx({
-      rehypePlugins: [[rehypeBaseLinks, base]],
-    }),
+    mdx(),
     sitemap({
       filter: (page) => !page.includes('/404'),
     }),
