@@ -7,7 +7,7 @@ import OptimizedImage from './OptimizedImage.astro';
 <footer class="bg-[#181516] py-16 text-white">
   <div class="mx-auto grid max-w-6xl items-end gap-12 px-4 md:grid-cols-2">
     <div>
-      <nav class="flex flex-col gap-2">
+      <nav class="grid gap-x-8 gap-y-2 sm:grid-cols-2">
         {
           footerLinks.map((link) => (
             <a href={withBase(link.href)} class="text-sm text-white/80 hover:text-brand-gold">

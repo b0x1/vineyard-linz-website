@@ -1,51 +1,86 @@
 ---
 import OptimizedImage from '../OptimizedImage.astro';
 
-const hands = [
-  { text: 'Gott von ganzem Herzen und mit ganzer Kraft anbeten', class: 'bg-brand-gold text-ink' },
-  { text: 'Nachfolger von Jesus gewinnen, begeistern und ausrüsten', class: 'bg-brand-orange text-white' },
-];
-
-const torso = [
-  { text: 'Spital (Heilung)', class: 'bg-brand-orange text-white' },
-  { text: 'Gemeinschaft', class: 'bg-brand-blue text-white' },
-  { text: 'Schule (im Glauben wachsen)', class: 'bg-brand-gold text-ink' },
-  { text: 'Armee (das Reich Gottes ausbreiten)', class: 'bg-brand-red text-white' },
-];
-
-const feet = [
-  { text: 'Neue Vineyards gründen und multiplizieren', class: 'bg-brand-red text-white' },
-  { text: 'Barmherzigkeit, allen Menschen gegenüber', class: 'bg-brand-magenta text-white' },
-  { text: 'Dienende Haltung anderen Kirchen gegenüber', class: 'bg-brand-red text-white' },
+const captions = [
+  {
+    text: 'Nachfolger von Jesus gewinnen, begeistern und ausrüsten',
+    class: 'bg-brand-orange',
+    style: 'left:45.444%;top:10.636%;width:32.889%;height:12.273%',
+  },
+  {
+    text: 'Neue Vineyards gründen und multiplizieren',
+    class: 'bg-brand-red',
+    style: 'left:0%;top:25.182%;width:32.889%;height:12.273%',
+  },
+  {
+    text: 'Dienende Haltung anderen Kirchen gegenüber',
+    class: 'bg-brand-red',
+    style: 'left:66.556%;top:28.818%;width:32.889%;height:12.273%',
+  },
+  {
+    text: 'Spital (Heilung)\nGemeinschaft\nSchule (im Glauben wachsen)\nArmee (das Reich Gottes ausbreiten)',
+    class: 'bg-brand-gold',
+    style: 'left:22.333%;top:42.273%;width:51.333%;height:15.455%',
+  },
+  {
+    text: 'Gott von ganzem Herzen und mit ganzer Kraft anbeten',
+    class: 'bg-brand-blue',
+    style: 'left:10.111%;top:67.818%;width:32.889%;height:12.273%',
+  },
+  {
+    text: 'Barmherzigkeit, allen Menschen gegenüber',
+    class: 'bg-brand-magenta',
+    style: 'left:67.111%;top:72.545%;width:32.889%;height:12.273%',
+  },
 ];
 ---
 
-<div class="mx-auto max-w-5xl px-4 py-8">
-  <p class="mb-6 text-center text-4xl font-bold uppercase tracking-tight text-ink md:text-6xl">Jesus</p>
-  <div class="grid items-center gap-6 md:grid-cols-[1fr_220px_1fr]">
-    <p class:list={['p-4 text-center font-bold leading-snug', hands[0].class]}>{hands[0].text}</p>
-    <div class="relative mx-auto w-52">
+<div class="mx-auto w-full max-w-[900px] px-4 py-8">
+  <div class="relative aspect-[900/1100] w-full [container-type:size]">
+    <div class="absolute" style="left:16.444%;top:19.636%;width:73.778%;height:71.545%">
       <OptimizedImage
         src="/images/vineyard-person.png"
         alt=""
-        width={220}
-        class="h-auto w-full"
+        width={500}
+        class="h-full w-full object-fill"
       />
-      <div class="absolute left-1/2 top-[42%] grid w-44 -translate-x-1/2 grid-cols-2 gap-1">
-        {
-          torso.map((part) => (
-            <p class:list={['p-1 text-center text-[10px] font-bold leading-tight', part.class]}>{part.text}</p>
-          ))
-        }
-      </div>
     </div>
-    <p class:list={['p-4 text-center font-bold leading-snug', hands[1].class]}>{hands[1].text}</p>
-  </div>
-  <div class="mt-6 grid gap-4 md:grid-cols-3">
+    <div
+      class="pointer-events-none absolute z-10 box-border rounded-full border-solid border-black bg-transparent"
+      style="left:39.444%;top:16%;width:22.111%;height:18.091%;border-width:1.222cqw"
+      aria-hidden="true"
+    >
+    </div>
     {
-      feet.map((part) => (
-        <p class:list={['p-4 text-center font-bold leading-snug', part.class]}>{part.text}</p>
+      captions.map((caption) => (
+        <p
+          class:list={[
+            'absolute z-20 flex items-center justify-center px-[1.2cqw] text-center text-[2.7cqw] font-bold leading-[1.2] whitespace-pre-line text-white',
+            caption.class,
+          ]}
+          style={caption.style}
+        >
+          {caption.text}
+        </p>
       ))
     }
+    <p
+      class="absolute z-20 text-center text-[7.1cqw] font-bold uppercase leading-none text-ink"
+      style="left:42.222%;top:0%;width:19.556%;height:8.727%"
+    >
+      Jesus
+    </p>
+    <p
+      class="absolute z-20 text-center text-[4.7cqw] font-bold uppercase leading-none text-ink"
+      style="left:33%;top:90%;width:40.667%"
+    >
+      Das Reich Gottes
+    </p>
+    <p
+      class="absolute z-20 text-center text-[7.1cqw] font-bold uppercase leading-none text-ink"
+      style="left:35.889%;top:93.4%;width:30.556%"
+    >
+      Die Bibel
+    </p>
   </div>
 </div>

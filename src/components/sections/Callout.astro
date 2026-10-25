@@ -1,3 +1,19 @@
-<aside class="bg-brand-gold p-6 text-lg font-bold leading-snug text-ink">
+---
+interface Props {
+  color?: 'gold' | 'red' | 'yellow' | 'orange' | 'blue';
+  class?: string;
+}
+
+const { color = 'gold', class: className } = Astro.props;
+const colors = {
+  gold: 'bg-brand-gold text-ink',
+  yellow: 'bg-brand-gold text-ink',
+  red: 'bg-brand-red text-white',
+  orange: 'bg-brand-orange text-white',
+  blue: 'bg-brand-blue text-white',
+};
+---
+
+<aside class:list={['p-6 text-lg font-bold leading-snug', colors[color], className]}>
   <slot />
 </aside>

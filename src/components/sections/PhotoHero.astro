@@ -6,9 +6,21 @@ interface Props {
   image: string;
   logo?: string;
   title?: string;
+  titleColor?: 'white' | 'red' | 'blue' | 'orange';
+  wash?: 'red' | 'blue' | 'none';
 }
 
-const { image, logo, title } = Astro.props;
+const { image, logo, title, titleColor = 'white', wash = 'red' } = Astro.props;
+const washes = {
+  red: 'bg-[rgba(192,22,39,0.4)]',
+  blue: 'bg-[rgba(13,116,176,0.4)]',
+};
+const titleColors = {
+  white: 'text-white',
+  red: 'text-brand-red',
+  blue: 'text-brand-blue',
+  orange: 'text-brand-orange',
+};
 const photo = resolveImage(image);
 const mark = resolveImage(logo);
 const photoWidths = photo
@@ -30,9 +42,9 @@ const markWidth = mark ? Math.min(520, mark.width) : undefined;
       />
     )
   }
-  <div class="absolute inset-0 bg-[rgba(192,22,39,0.4)]"></div>
+  {wash !== 'none' && <div class:list={['absolute inset-0', washes[wash]]}></div>}
   <div class="relative z-10 flex flex-col items-center gap-8">
     {mark && markWidth && <Image src={mark} alt="Vineyard Linz" width={markWidth} format="png" class="h-auto w-[min(520px,80vw)]" />}
-    {title && <h1 class="text-4xl font-bold uppercase tracking-tight text-white md:text-6xl">{title}</h1>}
+    {title && <h1 class:list={['text-5xl font-bold uppercase tracking-tight md:text-7xl xl:text-8xl', titleColors[titleColor]]}>{title}</h1>}
   </div>
 </section>

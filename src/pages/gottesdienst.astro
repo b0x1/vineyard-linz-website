@@ -1,56 +1,66 @@
 ---
 import Base from '../layouts/Base.astro';
-import HeroSection from '../components/sections/HeroSection.astro';
-import Section from '../components/sections/Section.astro';
-import GridSection from '../components/sections/GridSection.astro';
-import Card from '../components/sections/Card.astro';
+import PhotoHero from '../components/sections/PhotoHero.astro';
+import ColorBand from '../components/sections/ColorBand.astro';
+import Callout from '../components/sections/Callout.astro';
 import ChurchSuite from '../components/sections/ChurchSuite.astro';
 import GoogleForm from '../components/sections/GoogleForm.astro';
 import { withBase } from '../lib/withBase';
 ---
 
 <Base title="Gottesdienst" description="Gottesdienst in der Vineyard Linz - Gott gemeinsam feiern">
-  <HeroSection title="GOTT GEMEINSAM FEIERN" image="/images/vlinz-sq-icon-mono-red.png">
-    <p>Gottesdienst ist der Ort wo wir als ganze Kirche zusammenkommen und Gott feiern!</p>
-  </HeroSection>
+  <PhotoHero image="/images/gottesdienst-hero.jpg" title="GOTTESDIENST" titleColor="red" wash="none" />
 
-  <Section>
-    <h2>WANN UND WO?</h2>
-    <p>Jeder ist willkommen - du bist willkommen! Vielleicht bist du Atheist, oder du hast einfach mit „Kirche“ nicht viel am Hut, oder du gehörst einem anderen Glauben an, oder... Aber wir wollen klarstellen: du bist auf jeden Fall <strong>ganz herzlich willkommen</strong>! Wir freuen uns auch, wenn du einfach einmal einen Gottesdienst besuchst um dir ein Bild zu machen!</p>
-    <p>Gottesdienst ist der Ort wo wir zusammenkommen und Gott gemeinsam feiern.</p>
-    <p>Wir treffen uns an jedem <strong>1. und 3. Sonntag des Monats</strong> im <strong>Volkshaus Kandlheim</strong>, Edlbacherstraße 1, 4020 Linz.</p>
-    <p>Start ist immer um <strong>9:45</strong> - da gibt es Tee, Kaffee, und Snacks. Um <strong>10:00</strong> geht es dann los.</p>
-    <p>Jeder 1. und 3. Sonntag des Monats: <strong>9:45</strong> (Kaffee), <strong>10:00</strong> (Start).</p>
-    <p>Der Weg mit Jesus ist ein gemeinsamer Weg - wir sind gemeinsam unterwegs - sowohl <a href={withBase('/hubs/')}>im kleineren Rahmen in den Hubs</a> wie auch im größeren Rahmen, dem Gottesdienst.</p>
-  </Section>
+  <ColorBand color="red">GOTT GEMEINSAM FEIERN</ColorBand>
+  <section class="bg-white px-4 py-16">
+    <div class="mx-auto grid max-w-5xl items-start gap-10 md:grid-cols-[1fr_280px]">
+      <p class="text-lg leading-relaxed">Jeder ist willkommen - du bist willkommen! Vielleicht bist du Atheist, oder du hast einfach mit „Kirche“ nicht viel am Hut, oder du gehörst einem anderen Glauben an, oder... Aber wir wollen klarstellen: du bist auf jeden Fall <strong>ganz herzlich willkommen</strong>! Wir freuen uns auch, wenn du einfach einmal einen Gottesdienst besuchst um dir ein Bild zu machen!</p>
+      <Callout color="red">Gottesdienst ist der Ort wo wir als ganze Kirche zusammenkommen und Gott feiern!</Callout>
+    </div>
+  </section>
 
-  <Section>
-    <h3>Die nächsten Gottesdienste:</h3>
-    <ChurchSuite id="-/calendar/6f9d9dfa-dd2f-4393-befc-fe3043b4a4bc" />
-  </Section>
+  <ColorBand color="yellow">WANN UND WO?</ColorBand>
+  <section class="bg-white px-4 py-16">
+    <div class="mx-auto grid max-w-5xl items-start gap-10 md:grid-cols-[1fr_280px]">
+      <div class="space-y-6 text-lg leading-relaxed">
+        <p>Wir treffen uns an jedem <strong>1. und 3. Sonntag des Monats</strong> im <strong>Volkshaus Kandlheim</strong>, Edlbacherstraße 1, 4020 Linz.</p>
+        <p>Start ist immer um <strong>9:45</strong> - da gibt es Tee, Kaffee, und Snacks. Um <strong>10:00</strong> geht es dann los.</p>
+        <p>Der Weg mit Jesus ist ein gemeinsamer Weg - wir sind gemeinsam unterwegs - sowohl <a class="text-brand-blue" href={withBase('/hubs/')}>im kleineren Rahmen in den Hubs</a> wie auch im größeren Rahmen, dem Gottesdienst.</p>
+      </div>
+      <Callout color="yellow">Jeder 1. und 3. Sonntag des Monats: 9:45 (Kaffee), 10:00 (Start).</Callout>
+    </div>
+  </section>
 
-  <Section>
-    <h2>WAS ERWARTET DICH?</h2>
-  </Section>
+  <section class="bg-white px-4 pb-8">
+    <div class="mx-auto max-w-5xl">
+      <h3 class="text-2xl font-bold">Die nächsten Gottesdienste:</h3>
+      <ChurchSuite id="-/calendar/6f9d9dfa-dd2f-4393-befc-fe3043b4a4bc" />
+    </div>
+  </section>
 
-  <GridSection>
-    <Card title="Gemeinschaft" subtitle="Kaffee/Tee, Snacks, freundliche Menschen" link="/gottesdienst/" linkText="Mehr">
-      Vorher (ab 9:45) und nachher gibt es Kaffee, Tee und Snacks. Warum? Weil Kirche in der Bibel als Familie beschrieben wird, weil uns das miteinander wichtig ist, und weil wir es mögen, wenn Gott sich darüber freut, dass es dir gut geht!
-    </Card>
-    <Card title="Anbetung" subtitle="Eine Zeit, wo wir Gott durch Lieder anbeten" link="/gottesdienst/" linkText="Mehr">
-      Anbetung ist für uns etwas Leidenschaftliches. Es geht Gott nicht um Religion, sondern um eine Beziehung zu uns - darum singen wir Ihm gerne Lieder, die genau das zum Ausdruck bringen. Wenn du zum ersten Mal dabei bist und lieber in dieser Zeit einfach einmal zuhörst - gerne! Mach es dir gemütlich und lass es einfach einmal auf dich wirken! Viele Menschen erleben genau in diesen Zeiten Gottes liebende Gegenwart.
-    </Card>
-    <Card title="Bibel-Input" subtitle="Ein praktischer Bibel-Input" link="/gottesdienst/" linkText="Mehr">
-      Wir erleben, dass Gott gerne, ganz praktisch und ganz persönlich zu uns spricht. Er macht das besonders gerne durch die Bibel, die schon von den ersten Christen (und von Jesus selbst) als „Gottes Wort” gesehen wurde. Der Bibel-Input ist bei uns mehr als nur eine leere Motivationsrede. Wir erleben, wie der lebendige Gott durch sein Wort konkret und praktisch in unser Leben spricht - das ist eine spannende Sache!
-    </Card>
-    <Card title="Gebet" subtitle="Eine Gelegenheit, für sich beten zu lassen" link="/gottesdienst/" linkText="Mehr">
-      Wir beten gerne für einander, wir beten gerne für dich. Oft reagieren Menschen auf den Bibel-Input und wollen Gebet, oft gibt es Situationen im Leben wo man Gebet braucht. Aber wir beten gerne ganz konkret für dich: diese Möglichkeit kannst du, wenn du möchtest, direkt nach dem Gottesdienst in Anspruch nehmen - Gott liebt dich und möchte nicht, dass du Dinge alleine durchs Leben tragen musst!
-    </Card>
-  </GridSection>
+  <ColorBand color="orange">WAS ERWARTET DICH?</ColorBand>
 
-  <Section>
-    <p>Das wars auch schon! Unsere Gottesdienste sind einfach aber tiefgehend. Und offen für JEDEN. Also, schau vorbei und mach dir selbst ein Bild!</p>
-  </Section>
+  <section class="bg-white px-4 py-16">
+    <div class="mx-auto max-w-5xl space-y-12">
+      <div class="grid items-start gap-10 md:grid-cols-[1fr_280px]">
+        <p class="text-lg leading-relaxed">Vorher (ab 9:45) und nachher gibt es Kaffee, Tee und Snacks. Warum? Weil Kirche in der Bibel als Familie beschrieben wird, weil uns das miteinander wichtig ist, und weil wir es mögen, wenn Gott sich darüber freut, dass es dir gut geht!</p>
+        <Callout color="orange">Kaffee/Tee, Snacks, freundliche Menschen</Callout>
+      </div>
+      <div class="grid items-start gap-10 md:grid-cols-[280px_1fr]">
+        <p class="order-1 text-lg leading-relaxed md:order-2">Anbetung ist für uns etwas Leidenschaftliches. Es geht Gott nicht um Religion, sondern um eine Beziehung zu uns - darum singen wir Ihm gerne Lieder, die genau das zum Ausdruck bringen. Wenn du zum ersten Mal dabei bist und lieber in dieser Zeit einfach einmal zuhörst - gerne! Mach es dir gemütlich und lass es einfach einmal auf dich wirken! Viele Menschen erleben genau in diesen Zeiten Gottes liebende Gegenwart.</p>
+        <Callout color="orange" class="order-2 md:order-1">Eine Zeit, wo wir Gott durch Lieder anbeten</Callout>
+      </div>
+      <div class="grid items-start gap-10 md:grid-cols-[1fr_280px]">
+        <p class="text-lg leading-relaxed">Wir erleben, dass Gott gerne, ganz praktisch und ganz persönlich zu uns spricht. Er macht das besonders gerne durch die Bibel, die schon von den ersten Christen (und von Jesus selbst) als „Gottes Wort” gesehen wurde. Der Bibel-Input ist bei uns mehr als nur eine leere Motivationsrede. Wir erleben, wie der lebendige Gott durch sein Wort konkret und praktisch in unser Leben spricht - das ist eine spannende Sache!</p>
+        <Callout color="orange">Ein praktischer Bibel-Input</Callout>
+      </div>
+      <div class="grid items-start gap-10 md:grid-cols-[280px_1fr]">
+        <p class="order-1 text-lg leading-relaxed md:order-2">Wir beten gerne für einander, wir beten gerne für dich. Oft reagieren Menschen auf den Bibel-Input und wollen Gebet, oft gibt es Situationen im Leben wo man Gebet braucht. Aber wir beten gerne ganz konkret für dich: diese Möglichkeit kannst du, wenn du möchtest, direkt nach dem Gottesdienst in Anspruch nehmen - Gott liebt dich und möchte nicht, dass du Dinge alleine durchs Leben tragen musst!</p>
+        <Callout color="orange" class="order-2 md:order-1">Eine Gelegenheit, für sich beten zu lassen</Callout>
+      </div>
+      <p class="text-lg leading-relaxed">Das wars auch schon! Unsere Gottesdienste sind einfach aber tiefgehend. Und offen für JEDEN. Also, schau vorbei und mach dir selbst ein Bild!</p>
+    </div>
+  </section>
 
   <GoogleForm id="1GDMtljhVKK3Zo40DBCWfdIthqtjuqIW5qxs3n6XOICw" />
 </Base>

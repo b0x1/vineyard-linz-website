@@ -1,20 +1,34 @@
 ---
+import { getImage } from 'astro:assets';
 import Base from '../layouts/Base.astro';
-import HeroSection from '../components/sections/HeroSection.astro';
-import Section from '../components/sections/Section.astro';
+import ColorBand from '../components/sections/ColorBand.astro';
 import ChurchSuite from '../components/sections/ChurchSuite.astro';
 import GoogleForm from '../components/sections/GoogleForm.astro';
+import pattern from '../assets/images/brand-pattern.jpg';
+
+const background = await getImage({ src: pattern, width: 1600, format: 'webp' });
 ---
 
 <Base title="Kalender" description="Vineyard Linz Kalender - Unsere Events">
-  <HeroSection title="UNSERE EVENTS" image="/images/vlinz-sq-icon-mono-red.png">
-    <p>Hier findest du alle Termine und Events der Vineyard Linz.</p>
-  </HeroSection>
+  <section class="relative flex min-h-[50vh] items-center justify-center bg-white px-4 py-20 text-center">
+    <div
+      class="absolute inset-0 bg-[length:720px_auto] bg-repeat opacity-35"
+      style={`background-image: url('${background.src}')`}
+      aria-hidden="true"
+    ></div>
+    <h1 class="relative text-5xl font-bold uppercase leading-none tracking-tight text-brand-magenta md:text-8xl">
+      Vineyard<br />Linz<br />Kalender
+    </h1>
+  </section>
 
-  <Section>
-    <h3>Vineyard Linz Kalender</h3>
-    <ChurchSuite id="calendar" />
-  </Section>
+  <ColorBand color="magenta">UNSERE EVENTS</ColorBand>
+
+  <section class="bg-white px-4 py-8">
+    <div class="mx-auto max-w-5xl">
+      <ChurchSuite id="calendar/featured" height={420} />
+      <ChurchSuite id="calendar" />
+    </div>
+  </section>
 
   <GoogleForm id="1GDMtljhVKK3Zo40DBCWfdIthqtjuqIW5qxs3n6XOICw" />
 </Base>

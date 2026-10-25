@@ -17,6 +17,9 @@ import twitter from '../assets/images/twitter.png';
 import facebook from '../assets/images/facebook.png';
 import whatsapp from '../assets/images/whatsapp.png';
 import instagram from '../assets/images/instagram.jpg';
+import gottesdienstHero from '../assets/images/gottesdienst-hero.jpg';
+import hubsHero from '../assets/images/hubs-hero.jpg';
+import macheMitHero from '../assets/images/mache-mit-hero.jpg';
 
 const localImages: Record<string, ImageMetadata> = {
   '/images/hauptplatz.jpg': hauptplatz,
@@ -37,6 +40,9 @@ const localImages: Record<string, ImageMetadata> = {
   '/images/facebook.png': facebook,
   '/images/whatsapp.png': whatsapp,
   '/images/instagram.jpg': instagram,
+  '/images/gottesdienst-hero.jpg': gottesdienstHero,
+  '/images/hubs-hero.jpg': hubsHero,
+  '/images/mache-mit-hero.jpg': macheMitHero,
 };
 
 export function resolveImage(src?: string): ImageMetadata | undefined {
