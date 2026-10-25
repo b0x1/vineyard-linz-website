@@ -1,9 +1,18 @@
-<section class="bg-white px-4 py-16">
+---
+import { getImage } from 'astro:assets';
+import pattern from '../../assets/images/brand-pattern.jpg';
+
+const background = await getImage({ src: pattern, width: 1600, format: 'webp' });
+---
+
+<section class="bg-[length:720px_auto] bg-repeat" style={`background-image: url('${background.src}')`}>
+  <div class="bg-white/80 px-4 py-16">
   <div class="mx-auto max-w-3xl text-center text-ink">
     <p class="text-7xl font-bold leading-none md:text-8xl" aria-hidden="true">„</p>
-    <div class="text-xl leading-relaxed md:text-2xl [&_a]:text-brand-blue">
+    <div class="space-y-6 text-xl leading-relaxed md:text-2xl [&_a]:text-brand-blue">
       <slot />
     </div>
     <p class="text-7xl font-bold leading-none md:text-8xl" aria-hidden="true">“</p>
+  </div>
   </div>
 </section>

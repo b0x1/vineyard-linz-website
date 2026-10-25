@@ -1,0 +1,181 @@
+---
+import Base from '../layouts/Base.astro';
+import PhotoTitle from '../components/sections/PhotoTitle.astro';
+import ColorBand from '../components/sections/ColorBand.astro';
+import Callout from '../components/sections/Callout.astro';
+import GiantQuote from '../components/sections/GiantQuote.astro';
+import ValueTiles from '../components/sections/ValueTiles.astro';
+import VineyardPerson from '../components/sections/VineyardPerson.astro';
+import GoogleForm from '../components/sections/GoogleForm.astro';
+import OptimizedImage from '../components/OptimizedImage.astro';
+---
+
+<Base title="Wer sind wir?" description="Lerne die Vineyard Linz kennen.">
+  <PhotoTitle image="/images/lentos.jpg" title="WER SIND WIR?" wash="yellow" tall />
+  <ColorBand color="yellow">WAS IST „VINEYARD LINZ“?</ColorBand>
+
+  <section class="bg-white px-4 py-16">
+    <div class="mx-auto grid max-w-5xl items-start gap-10 md:grid-cols-[1fr_280px]">
+      <div class="space-y-6 text-lg leading-relaxed">
+        <OptimizedImage
+          src="/images/vlinz-sq-icon-mono-red.png"
+          alt=""
+          width={100}
+          height={100}
+          class="h-24 w-24"
+        />
+        <p>
+          Vineyard Linz ist eine christliche Kirche. Bei dem Wort „Kirche” denkt man oft an ein altes Gebäude oder eine Institution. In unserem Fall wollen wir das Wort in seiner ursprünglichen Bedeutung verwenden – wir verstehen unter Kirche eine Gemeinschaft von Christen, die ihren Glauben gemeinsam ausleben.
+        </p>
+        <p>
+          Wir sind eine Kirche – wir sind eine Gruppe von Menschen, die sich in Jesus verliebt haben. Wir glauben an Gott, und dass es ihn gibt. Aber darüber hinaus glauben wir auch, dass es die in der Bibel beschriebene enge Liebesbeziehung, die Gott mit allen Menschen sucht, wirklich gibt. Und wir glauben das nicht nur, sondern erleben es auch. Für uns ist der christliche Glaube etwas Lebendiges, Wunderbares, Lebensbringendes, Freudenerfülltes.
+        </p>
+        <p>
+          Mit dieser Freude und Liebe, die wir täglich von Gott geschenkt bekommen, wollen wir unsere Umgebung füllen – Kirche lebt Liebe.
+        </p>
+      </div>
+      <Callout>Wir sind eine „Kirche“ – eine Gruppe von Menschen, die sich in Jesus verliebt haben.</Callout>
+    </div>
+  </section>
+
+  <ColorBand color="magenta">LEITER DER VINEYARD LINZ</ColorBand>
+
+  <section class="bg-white px-4 py-16">
+    <div class="mx-auto grid max-w-5xl items-start gap-10 md:grid-cols-[1fr_280px]">
+      <div class="space-y-10 text-lg leading-relaxed">
+        <div class="space-y-4">
+          <h2 class="inline-block border-b-4 border-brand text-2xl font-bold uppercase tracking-wider">Jida Staple</h2>
+          <p>
+            Ich (Jida) komme aus Nazareth, in Israel, und bin israelische Araberin. Als Kind habe ich mich immer schon zu Jesus hingezogen gefühlt, und verstand nie ganz warum. Im Alter von 14 Jahren entdeckte ich dann, dass er real ist und dass er mich liebt - das veränderte mein Leben! Jesus bedeutet mir alles, er ist der Sinn und die Freude meines Lebens.
+          </p>
+          <p>
+            Ich liebe Menschen, und spüre wie leidenschaftlich Gottes Herz für alle Menschen schlägt – daher wünsche ich mir nichts mehr, als dass Menschen selbst in diese Liebesbeziehung zu Jesus kommen!
+          </p>
+          <p>
+            Ich mag Sprachen, liebe Kinder, lese gerne, und schaue gern Sci-Fi (aber das ist mein Geheimnis) ;-)
+          </p>
+          <p>Ich freu mich, wenn ich von dir höre – schreib mir eine E-mail:</p>
+          <a class="font-bold text-brand" href="mailto:jida@vineyard-linz.church">jida@vineyard-linz.church</a>
+        </div>
+        <div class="space-y-4">
+          <h2 class="inline-block border-b-4 border-brand text-2xl font-bold uppercase tracking-wider">Robin Staple</h2>
+          <p>
+            Ich (Robin) komme aus Linz, und bin halb Österreicher / halb Engländer. Ich bin ein Fan von neuer Technologie und Innovation, hab ein Herz für Menschen, und bin ein leidenschaftlicher Mensch, der gerne lacht.
+          </p>
+          <p>
+            Aber meine größte Leidenschaft ist Jesus - er ist die Liebe meines Lebens, mein Leben gehört ihm, und ich träume davon, dass ihn jeder Linzer auch kennenlernt!
+          </p>
+          <p>Ich freu mich, wenn ich von dir höre – schreib mir eine E-mail:</p>
+          <a class="font-bold text-brand" href="mailto:robin@vineyard-linz.church">robin@vineyard-linz.church</a>
+        </div>
+      </div>
+      <OptimizedImage
+        src="/images/wer-sind-wir-hero.jpg"
+        alt="Jida und Robin Staple"
+        width={560}
+        class="mx-auto h-auto w-full max-w-xs"
+      />
+    </div>
+    <p class="mx-auto mt-12 max-w-3xl text-center text-lg leading-relaxed">
+      Wir haben zwei wunderbare Kinder – eine Tochter, Amira, und einen Sohn, Naseem. Gemeinsam sind wir im Sommer 2016 nach Linz gezogen, um dort die Vineyard Linz zu gründen und zu leiten.
+    </p>
+  </section>
+
+  <ColorBand color="blue">WORAN WIR GLAUBEN</ColorBand>
+
+  <section class="bg-white px-4 py-16">
+    <div class="mx-auto max-w-3xl space-y-6 text-lg leading-relaxed">
+      <p>
+        Als Christen glauben wir an die Glaubensbekenntnisse der frühen Kirche. Das älteste Glaubensbekenntnis ist ganz einfach:
+      </p>
+    </div>
+  </section>
+
+  <GiantQuote>
+    <p>
+      Jesus ist <span class="font-bold text-brand-red">Herr</span>!
+    </p>
+  </GiantQuote>
+
+  <section class="bg-white px-4 py-16">
+    <div class="mx-auto max-w-3xl space-y-6 text-lg leading-relaxed">
+      <p>
+        Wie war das gemeint? In einer Welt, in der Menschen andere unterdrücken, in der Macht meist missbraucht wird, und in der wir alle versuchen, unsere eigenen „Herren” oder „Könige” zu sein, ist dieses Glaubensbekenntnis revolutionär.
+      </p>
+      <h2 class="text-2xl font-bold uppercase tracking-tight">Das apostolische Glaubensbekenntnis</h2>
+      <p>
+        Ein anderes Glaubensbekenntnis, das uns wichtig ist, ist das Apostolische Glaubensbekenntnis, das uns sowohl mit der Katholischen Kirche wie auch mit der Evangelischen Kirche und evangelischen Freikirchen verbindet:
+      </p>
+      <p>
+        Ich glaube an Gott, den Vater, den Allmächtigen, den Schöpfer des Himmels und der Erde. Und an Jesus Christus, seinen eingeborenen Sohn, unsern Herrn, empfangen durch den Heiligen Geist, geboren von der Jungfrau Maria, gelitten unter Pontius Pilatus, gekreuzigt, gestorben und begraben, hinabgestiegen in das Reich des Todes, am dritten Tage auferstanden von den Toten, aufgefahren in den Himmel; er sitzt zur Rechten Gottes, des allmächtigen Vaters; von dort wird er kommen, zu richten die Lebenden und die Toten. Ich glaube an den Heiligen Geist, die heilige christliche Kirche, Gemeinschaft der Heiligen, Vergebung der Sünden, Auferstehung der Toten und das ewige Leben. Amen.
+      </p>
+      <p>
+        In der frühen Kirche, zu einer Zeit wo der Römische Kaiser „Herr” war, war es oft gefährlich zu sagen, dass Jesus Herr ist. Auch der Apostel Paulus schreibt über dieses Glaubensbekenntnis in der Bibel:
+      </p>
+    </div>
+  </section>
+
+  <GiantQuote>
+    <p>
+      Niemand, der den Geist Gottes hat, kann Jesus verfluchen, und niemand kann sagen: »<span class="font-bold text-brand-red">Jesus ist der Herr</span>«, wenn es ihm nicht der <span class="font-bold text-brand-blue">Heilige Geist</span> eingibt.
+    </p>
+    <p class="font-bold">Die Bibel (1. Korinther 12:3)</p>
+  </GiantQuote>
+
+  <section class="bg-white px-4 py-16">
+    <div class="mx-auto max-w-3xl space-y-6 text-lg leading-relaxed">
+      <h2 class="text-2xl font-bold uppercase tracking-tight">Was bedeutet „Vineyard“?</h2>
+      <p>
+        Vineyard bedeutet auf Englisch „Weinberg” – das Bild eines Weinberges kommt oft in der Bibel vor, wo Gottes Volk mit einem Weinberg und Gott mit einem Weingärtner verglichen wird. Jesus selbst sagt von sich,
+      </p>
+      <blockquote class="space-y-4 border-l-4 border-brand pl-4">
+        <p>„Ich bin der wahre Weinstock und mein Vater der Weingärtner“</p>
+        <p>und,</p>
+        <p>„Ich bin der Weinstock, ihr seid die Reben. Wer in mir bleibt und ich in ihm, der bringt viel Frucht“</p>
+        <p class="font-bold">Die Bibel (Johannes 15:1, 5)</p>
+      </blockquote>
+      <p>
+        Die Vineyard Linz ist Teil der Vineyard Bewegung – einer Bewegung von unterschiedlichen Kirchen, Gemeinden, und Gemeinschaften. Was uns miteinander verbindet sind gemeinsame gelebte Werte.
+      </p>
+      <p>
+        Auf der Webseite der Vineyard Bewegung Deutschland, Österreich, und Schweiz (DACH) gibt es zu jedem dieser Kernwerte mehr Infos:
+        <a class="text-brand-blue underline" href="http://www.vineyard-dach.net/vineyard/dach-wer-sind-wir/unsere-werte.html" target="_blank" rel="noopener noreferrer">Vineyard DACH – Unsere Werte</a>
+      </p>
+
+      <h2 class="text-2xl font-bold uppercase tracking-tight">Wenn Jesus „Herr” ist...</h2>
+      <p>
+        Wenn Jesus in einem Leben Herr ist, dann dreht sich das Leben nicht mehr um dich! Angst, Sorgen, Unsicherheit, und vieles andere verschwinden – und werden durch tiefen Frieden ersetzt.
+      </p>
+      <p>
+        Wo Jesus Herr ist, werden ausbeuterische wirtschaftliche und politische Systeme herausgefordert. Wo Jesus Herr ist, wird Menschen, die in Armut leben, geholfen, da werden Flüchtlinge willkommen geheißen, Beziehungen geheilt, Menschen von Suchtverhalten befreit, da erfahren Menschen innere und körperliche Heilung, und vieles mehr.
+      </p>
+
+      <h2 class="text-2xl font-bold uppercase tracking-tight">Der Auftrag von Jesus, der Auftrag der Kirche</h2>
+      <p>
+        Jesus selbst hat seinen Auftrag vor rund 2000 Jahren anhand einer Bibelstelle aus Jesaja 61 definiert. Das kann man in der Bibel, in Lukas 4:18-19, nachlesen:
+      </p>
+    </div>
+  </section>
+
+  <GiantQuote>
+    <p>
+      „Der Geist des Herrn ruht auf mir, denn er hat mich gesalbt, um den Armen die gute Botschaft zu verkünden. Er hat mich gesandt, Gefangenen zu verkünden, dass sie freigelassen werden, Blinden, dass sie sehen werden, Unterdrückten, dass sie befreit werden und dass die Zeit der Gnade des Herrn gekommen ist.“
+    </p>
+    <p class="font-bold">Die Bibel (Lukas 4:18-19)</p>
+  </GiantQuote>
+
+  <ValueTiles />
+
+  <section class="bg-white px-4 py-16">
+    <div class="mx-auto max-w-3xl space-y-6 text-lg leading-relaxed">
+      <h2 class="text-center text-2xl font-bold uppercase tracking-tight">Die „Vineyard“ Person</h2>
+      <p>
+        In der Bibel wird „Kirche” oft mit einem „Körper” verglichen. Kirche soll keine starre Organisation sein, sondern etwas Lebendiges, wo jeder eine wichtige Rolle spielt. Aus diesem Grund stellen wir manchmal durch das Bild der „Vineyard Person” dar, was eine Vineyard ist – anders formuliert, wie eine Kirche oder Gemeinschaft aussieht, die die Vineyard Werte lebt:
+      </p>
+    </div>
+  </section>
+
+  <VineyardPerson />
+
+  <GoogleForm id="1GDMtljhVKK3Zo40DBCWfdIthqtjuqIW5qxs3n6XOICw" />
+</Base>

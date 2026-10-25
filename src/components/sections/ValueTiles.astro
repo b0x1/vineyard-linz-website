@@ -1,0 +1,19 @@
+---
+const tiles = [
+  { text: 'Reich Gottes, wie es Jesus gelehrt und praktiziert hat', class: 'bg-brand-orange text-white' },
+  { text: 'Gottes kraftvolle Gegenwart erleben', class: 'bg-brand-blue text-white' },
+  { text: 'Barmherzigkeit, die sich den Menschen zuwendet', class: 'bg-brand-magenta text-white' },
+  { text: 'Heilende Gemeinschaft', class: 'bg-brand-gold text-ink' },
+  { text: 'Erneuerung, die Kirche und Gesellschaft durchdringt', class: 'bg-brand-red text-white' },
+];
+---
+
+<div class="mx-auto flex max-w-4xl flex-wrap justify-center gap-4 px-4 py-12">
+  {
+    tiles.map((tile) => (
+      <p class:list={['flex w-64 items-center justify-center p-6 text-center text-lg font-bold leading-snug', tile.class]}>
+        {tile.text}
+      </p>
+    ))
+  }
+</div>

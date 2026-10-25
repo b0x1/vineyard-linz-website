@@ -1,0 +1,42 @@
+---
+import Base from '../layouts/Base.astro';
+import HeroSection from '../components/sections/HeroSection.astro';
+import Section from '../components/sections/Section.astro';
+import ChurchSuite from '../components/sections/ChurchSuite.astro';
+import GoogleForm from '../components/sections/GoogleForm.astro';
+import { withBase } from '../lib/withBase';
+---
+
+<Base title="Mach mit" description="Sei dabei und gestalte die Vineyard Linz mit.">
+  <HeroSection title="SEI DABEI!" image="/images/vlinz-sq-icon-mono-red.png">
+    <p>Das freut uns sehr! Die Vineyard Linz ist offen für Menschen aller Religionen, Glaubensrichtungen und Philosophien. Egal, ob du Jesus schon kennst, oder vielleicht auf der Suche bist, egal, ob du gleich mitmachen oder einfach einmal schnuppern möchtest – wenn dich unsere Vision anspricht, und du bei unserem Auftrag – Linz lebt Liebe – mitmachen möchtest, <a href={withBase('/kontaktiere-uns/')}>dann kontaktiere uns!</a> Wir freuen uns über dich, und auf dich!</p>
+  </HeroSection>
+
+  <Section>
+    <h2>MACH MIT!</h2>
+    <p>Vineyard Linz ist eine Kirche, die Liebe lebt. Unser Ziel ist es, dass Linz eine Stadt wird, die Liebe lebt. Wir träumen davon, dass Menschen Jesus und seine Liebe persönlich kennenlernen. Dass Menschen in eine lebendige Liebesbeziehung mit Jesus hineinwachsen, und dass sie sein Herz, seinen Auftrag für diese Stadt, zu ihrem Herzen und ihrem Auftrag machen.</p>
+    <h3>ICH BIN IN LINZ &amp; MACHE MIT!</h3>
+    <p>Wenn du Jesus noch nicht kennst, aber irgendwie von ihm angezogen bist, ohne das erklären zu können – dann herzlich willkommen! Du bist unter Gleichgesinnten!</p>
+    <p>Wenn dein Herz leidenschaftlich für Jesus und sein Königreich brennt, dann herzlich willkommen, du bist unter Gleichgesinnten! Gemeinsam werden wir unsere Stadt verändern!</p>
+    <h3>Aktivisten gesucht!</h3>
+    <p>Wenn dich unsere Vision anspricht, und du bei unserem Auftrag mitmachen möchtest, <a href={withBase('/kontaktiere-uns/')}>dann kontaktiere uns!</a></p>
+    <p>Bist du Teil einer anderen Kirche oder Gemeinde in Linz? Wir finden es wunderbar, dass es so viele tolle und unterschiedliche Kirchen in Linz gibt. Wir möchten dich daher an dieser Stelle darin bestärken, in deiner Kirche mitzuarbeiten – nur weiter so! Solltest du dich uns trotzdem anschließen wollen, bitten wir dich, zuerst mit deinem Pfarrer, Pastor, oder Gemeindeleiter über dein Vorhaben zu reden. Danke!</p>
+  </Section>
+
+  <Section>
+    <h3>ICH BIN LEIDER NICHT IN LINZ!</h3>
+    <p>Toll, dass du trotzdem mithelfen möchtest! Wir brauchen tatkräftige Unterstützung in den folgenden Bereichen:</p>
+    <ol>
+      <li><strong>Gebet</strong> – bitte <a href={withBase('/kontaktiere-uns/')}>kontaktiere uns</a></li>
+      <li><strong>Spenden</strong> – bitte <a href={withBase('/unterstuetze-uns/')}>folge dem Link</a>, um online zu spenden, oder <a href={withBase('/kontaktiere-uns/')}>nimm Kontakt mit uns auf</a>, wenn du Fragen hast</li>
+      <li><strong>Soziale Medien</strong> – bitte <a href={withBase('/kontaktiere-uns/')}>kontaktiere uns</a></li>
+      <li><strong>Nach Linz ziehen</strong> – wir suchen weiterhin nach Menschen, die Gott nach Linz ruft, um mit uns Vineyard Linz aufzubauen. Vielleicht ruft ja Gott dich! <a href={withBase('/kontaktiere-uns/')}>Lass uns ins Gespräch kommen!</a></li>
+    </ol>
+  </Section>
+
+  <Section>
+    <ChurchSuite id="addressbook/form" />
+  </Section>
+
+  <GoogleForm id="1GDMtljhVKK3Zo40DBCWfdIthqtjuqIW5qxs3n6XOICw" />
+</Base>

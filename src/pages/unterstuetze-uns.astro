@@ -1,0 +1,33 @@
+---
+import Base from '../layouts/Base.astro';
+import HeroSection from '../components/sections/HeroSection.astro';
+import Section from '../components/sections/Section.astro';
+import QuoteSection from '../components/sections/QuoteSection.astro';
+import ChurchSuite from '../components/sections/ChurchSuite.astro';
+import GoogleForm from '../components/sections/GoogleForm.astro';
+---
+
+<Base title="Unterstütze uns" description="Vineyard Linz finanziell unterstützen - Investiere in die Vision">
+  <HeroSection title="INVESTIERE IN DIE VISION" image="/images/vlinz-sq-icon-mono-red.png">
+    <p>Wieviel ist eine veränderte Stadt wert? Wieviel ist ein verändertes Leben wert? Als Vineyard Linz haben wir den Auftrag von Gott, die Stadt in der wir leben, zu lieben.</p>
+  </HeroSection>
+
+  <Section>
+    <h3>UNTERSTÜTZE UNS!</h3>
+    <p>Wenn „ja!”, dann möchten wir dich herzlich einladen, mit uns gemeinsam in Gottes Königreich in Linz zu investieren.</p>
+    <p>Eine Ressource, die wir benötigen, um Linz zu verändern, sind Finanzen. Wir laden dich daher dazu ein, in dieses Kirchen-Start-Up mit Freude und Großzügigkeit Geld zu investieren.</p>
+  </Section>
+
+  <QuoteSection author="Die Bibel (2. Korinther 9:6-8)">
+    Denkt daran: Ein Bauer, der nur wenig Samen aussät, wird auch nur eine kleine Ernte einbringen. Wer aber viel sät, wird auch viel ernten. Jeder von euch muss selbst entscheiden, wie viel er geben möchte. Gebt jedoch nicht widerwillig oder unter Zwang, denn Gott liebt den Menschen, der gerne gibt.
+  </QuoteSection>
+
+  <Section>
+    <h3>MÖGLICHKEITEN ZU SPENDEN</h3>
+    <p><strong>Kontoüberweisung ODER Dauerauftrag</strong><br />Kontoinhaber: Vineyard Linz – Christliche Kirche<br />IBAN: AT62 3427 7000 0004 8207<br />BIC: RZOOAT2L277</p>
+    <p><strong>Online Spendenformular</strong></p>
+    <ChurchSuite id="donate" />
+  </Section>
+
+  <GoogleForm id="1GDMtljhVKK3Zo40DBCWfdIthqtjuqIW5qxs3n6XOICw" />
+</Base>

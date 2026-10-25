@@ -1,5 +1,6 @@
 import type { ImageMetadata } from 'astro';
 import hauptplatz from '../assets/images/hauptplatz.jpg';
+import lentos from '../assets/images/lentos.jpg';
 import poestlingberg from '../assets/images/poestlingberg.jpg';
 import hands from '../assets/images/hands.jpg';
 import linzLebtLiebe from '../assets/images/linz-lebt-liebe.jpg';
@@ -19,6 +20,7 @@ import instagram from '../assets/images/instagram.jpg';
 
 const localImages: Record<string, ImageMetadata> = {
   '/images/hauptplatz.jpg': hauptplatz,
+  '/images/lentos.jpg': lentos,
   '/images/poestlingberg.jpg': poestlingberg,
   '/images/hands.jpg': hands,
   '/images/linz-lebt-liebe.jpg': linzLebtLiebe,

@@ -1,0 +1,51 @@
+---
+import OptimizedImage from '../OptimizedImage.astro';
+
+const hands = [
+  { text: 'Gott von ganzem Herzen und mit ganzer Kraft anbeten', class: 'bg-brand-gold text-ink' },
+  { text: 'Nachfolger von Jesus gewinnen, begeistern und ausrüsten', class: 'bg-brand-orange text-white' },
+];
+
+const torso = [
+  { text: 'Spital (Heilung)', class: 'bg-brand-orange text-white' },
+  { text: 'Gemeinschaft', class: 'bg-brand-blue text-white' },
+  { text: 'Schule (im Glauben wachsen)', class: 'bg-brand-gold text-ink' },
+  { text: 'Armee (das Reich Gottes ausbreiten)', class: 'bg-brand-red text-white' },
+];
+
+const feet = [
+  { text: 'Neue Vineyards gründen und multiplizieren', class: 'bg-brand-red text-white' },
+  { text: 'Barmherzigkeit, allen Menschen gegenüber', class: 'bg-brand-magenta text-white' },
+  { text: 'Dienende Haltung anderen Kirchen gegenüber', class: 'bg-brand-red text-white' },
+];
+---
+
+<div class="mx-auto max-w-5xl px-4 py-8">
+  <p class="mb-6 text-center text-4xl font-bold uppercase tracking-tight text-ink md:text-6xl">Jesus</p>
+  <div class="grid items-center gap-6 md:grid-cols-[1fr_220px_1fr]">
+    <p class:list={['p-4 text-center font-bold leading-snug', hands[0].class]}>{hands[0].text}</p>
+    <div class="relative mx-auto w-52">
+      <OptimizedImage
+        src="/images/vineyard-person.png"
+        alt=""
+        width={220}
+        class="h-auto w-full"
+      />
+      <div class="absolute left-1/2 top-[42%] grid w-44 -translate-x-1/2 grid-cols-2 gap-1">
+        {
+          torso.map((part) => (
+            <p class:list={['p-1 text-center text-[10px] font-bold leading-tight', part.class]}>{part.text}</p>
+          ))
+        }
+      </div>
+    </div>
+    <p class:list={['p-4 text-center font-bold leading-snug', hands[1].class]}>{hands[1].text}</p>
+  </div>
+  <div class="mt-6 grid gap-4 md:grid-cols-3">
+    {
+      feet.map((part) => (
+        <p class:list={['p-4 text-center font-bold leading-snug', part.class]}>{part.text}</p>
+      ))
+    }
+  </div>
+</div>

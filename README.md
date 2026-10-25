@@ -1,12 +1,12 @@
 # Vineyard Linz
 
-Static site for Vineyard Linz. Pages are MDX files in `content/pages`. Astro renders them and GitHub Actions publishes the result to GitHub Pages.
+Static site for Vineyard Linz. Each page is an Astro file in `src/pages`. GitHub Actions publishes the build to GitHub Pages.
 
 ## Edit a page
 
-Change the Markdown in `content/pages`. Layout pieces such as `<HeroSection>`, `<Section>`, `<QuoteSection>`, and `<Card>` are components in `src/components/sections`. Leave those tags in place and edit the text around them.
+Open the page in `src/pages`. The home page is `src/pages/index.astro`. Every other file name is the page address, for example `src/pages/hubs.astro` is `/hubs/`.
 
-The home page is `content/pages/startseite.mdx`. Every other file name is the page address, for example `content/pages/hubs.mdx` is `/hubs/`.
+Layout pieces such as `HeroSection`, `Section`, `QuoteSection`, and `Card` live in `src/components/sections`.
 
 ## Develop
 

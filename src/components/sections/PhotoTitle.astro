@@ -6,9 +6,10 @@ interface Props {
   image: string;
   title: string;
   wash: 'red' | 'blue' | 'yellow';
+  tall?: boolean;
 }
 
-const { image, title, wash } = Astro.props;
+const { image, title, wash, tall = false } = Astro.props;
 const photo = resolveImage(image);
 const photoWidths = photo
   ? [...new Set([640, 1200, 1800].map((value) => Math.min(value, photo.width)))].sort((a, b) => a - b)
@@ -25,7 +26,12 @@ const titles = {
 };
 ---
 
-<section class="relative flex min-h-[280px] items-center justify-center overflow-hidden px-4 py-16 text-center">
+<section
+  class:list={[
+    'relative flex items-center justify-center overflow-hidden px-4 py-16 text-center',
+    tall ? 'min-h-[50vh]' : 'min-h-[280px]',
+  ]}
+>
   {
     photo && (
       <Image

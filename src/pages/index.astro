@@ -1,14 +1,112 @@
 ---
-import { getEntry, render } from 'astro:content';
 import Base from '../layouts/Base.astro';
-
-const page = await getEntry('pages', 'startseite');
-if (!page) {
-  throw new Error('Missing content/pages/startseite.mdx');
-}
-const { Content } = await render(page);
+import PhotoHero from '../components/sections/PhotoHero.astro';
+import PhotoTitle from '../components/sections/PhotoTitle.astro';
+import ColorBand from '../components/sections/ColorBand.astro';
+import GiantQuote from '../components/sections/GiantQuote.astro';
+import OutlineLink from '../components/sections/OutlineLink.astro';
+import YouTube from '../components/sections/YouTube.astro';
+import GoogleForm from '../components/sections/GoogleForm.astro';
+import OptimizedImage from '../components/OptimizedImage.astro';
+import { withBase } from '../lib/withBase';
 ---
 
-<Base title="Christliche Kirche in Linz - Vineyard Linz - Kirche Lebt Liebe" description={page.data.description}>
-  <Content />
+<Base title="Christliche Kirche in Linz - Vineyard Linz - Kirche Lebt Liebe" description="Kirche lebt Liebe - Vineyard Linz">
+  <PhotoHero image="/images/hauptplatz.jpg" logo="/images/vlinz-logo-cmyk.png" />
+
+  <section class="bg-white px-4 py-16">
+    <div class="mx-auto grid max-w-5xl items-start gap-10 md:grid-cols-[minmax(0,280px)_1fr]">
+      <OptimizedImage
+        src="/images/jida-robin.jpg"
+        alt="Robin und Jida Staple"
+        width={560}
+        class="mx-auto h-auto w-full max-w-xs"
+      />
+      <div class="space-y-6 text-lg leading-relaxed">
+        <h1 class="text-3xl font-bold uppercase tracking-tight md:text-5xl">Kirche lebt Liebe?</h1>
+        <p>
+          Kirche lebt Liebe! Ein interessanter Spruch, aber was steckt dahinter? Wir glauben, dass Jesus der Erfinder von „Kirche” ist, dass Jesus lebt, und dass die weltweite Kirche, quer durch alle christlichen Glaubensrichtungen, sein Plan ist, um die Welt zu verändern.
+        </p>
+        <p>
+          Wir sind davon überzeugt, dass „Kirche” ihrem Gründer, Jesus, gehört, und dass ihr Auftrag von ihm ewigen Bestand hat, nämlich dass wir aktiv lieben: wir lieben Gott mit Hingabe, wir lieben einander und andere wie uns selbst. Das ist Kirche – egal ob Katholisch, Evangelisch, oder Freikirchlich.
+        </p>
+        <p>
+          Und das ist auch unsere Vision für Vineyard Linz – und für Linz! Komm und sei mit uns ein Teil davon!
+        </p>
+        <p class="font-bold">Robin &amp; Jida Staple (Leiter)</p>
+        <p>
+          Wir treffen uns jede Woche, und du bist herzlich eingeladen! Mehr Infos: <a class="text-brand-blue" href={withBase('/hubs/')}>Hubs</a>
+        </p>
+      </div>
+    </div>
+    <div class="mx-auto max-w-3xl">
+      <YouTube id="D1AvtODmMU0" />
+    </div>
+  </section>
+
+  <PhotoTitle image="/images/poestlingberg.jpg" title="UNSERE VISION" wash="red" />
+  <ColorBand color="red">WOVON WIR TRÄUMEN!</ColorBand>
+  <GiantQuote>
+    <p>
+      Gott hat uns dazu berufen, eine <span class="font-bold text-brand-blue">biblische</span>, wachsende, moderne <span class="font-bold text-brand-red">Kirche</span> für Linz und Umgebung aufzubauen, die für <span class="font-bold text-brand-magenta">Jesus und seine königliche Herrschaft</span> lebt.
+    </p>
+    <p>
+      Eine Kirche, wo Gott mit ganzem Herzen <span class="font-bold text-brand-orange">angebetet</span> wird, und wo das <span class="font-bold text-brand-blue">Evangelium</span> durch <span class="font-bold text-brand-red">Großzügigkeit und Barmherzigkeit</span> auf kreative Art und Weise verkündet wird.
+    </p>
+    <p>
+      Eine Kirche, durch die Gottes Reich täglich in der <span class="font-bold text-brand-magenta">Kraft des Heiligen Geistes</span> ausgebreitet wird, wo Nachfolger von Jesus <span class="font-bold text-brand-orange">gewonnen, begeistert und ausgerüstet</span> werden, und wo Leiter <span class="font-bold text-brand-blue">trainiert, bevollmächtigt, und ausgesandt</span> werden.
+    </p>
+    <p>
+      Eine Kirche, die kirchengründende <span class="font-bold text-brand-red">Kirchen gründet</span>, und die <span class="font-bold text-brand-magenta">Gottes Liebe</span> auslebt.
+    </p>
+  </GiantQuote>
+  <OutlineLink href="/vision/">Mehr Infos zu unserer Vision</OutlineLink>
+
+  <PhotoTitle image="/images/hands.jpg" title="KIRCHE LEBT LIEBE" wash="blue" />
+  <ColorBand color="blue">WARUM „KIRCHE LEBT LIEBE“?</ColorBand>
+  <GiantQuote>
+    <p>
+      „Kirche lebt Liebe” ist die Zusammenfassung unserer Vision. Als Christen glauben wir, dass Gott der Ursprung aller wahren Liebe ist. Und wir glauben das nicht nur theoretisch, sondern erleben diese Liebe ganz praktisch und konkret in unserem eigenen Leben.
+    </p>
+    <p>
+      In der Bibel steht folgendes über Gottes Liebe, und welche Auswirkung sie auf uns hat, wenn wir sie erleben:
+    </p>
+    <p>
+      Lasst uns einander lieben, denn die <span class="font-bold text-brand-blue">Liebe kommt von Gott</span>. Wer liebt, ist <span class="font-bold text-brand-red">von Gott geboren</span> und kennt Gott. Wer aber nicht liebt, kennt Gott nicht - denn Gott ist Liebe.
+    </p>
+    <p>
+      <span class="font-bold text-brand-magenta">Gottes Liebe</span> zu uns zeigt sich darin, dass er seinen einzigen Sohn in die Welt sandte, damit wir durch ihn das ewige Leben haben.
+    </p>
+    <p>
+      Und <span class="font-bold text-brand-orange">das ist die wahre Liebe</span>: Nicht wir haben Gott geliebt, sondern <span class="font-bold text-brand-blue">er hat uns zuerst geliebt</span> und hat seinen Sohn gesandt, damit er uns von unserer Schuld befreit.
+    </p>
+    <p>
+      Liebe Freunde, weil <span class="font-bold text-brand-red">Gott uns so sehr geliebt</span> hat, sollen wir auch <span class="font-bold text-brand-magenta">einander lieben</span>. Niemand hat Gott je gesehen. Aber wenn wir einander lieben, dann bleibt Gott in uns, und seine Liebe kommt in uns zur Vollendung.
+    </p>
+    <p class="font-bold">Die Bibel (1. Johannes 4:7-12)</p>
+  </GiantQuote>
+
+  <PhotoTitle image="/images/linz-lebt-liebe.jpg" title="LINZ LEBT LIEBE" wash="yellow" />
+  <ColorBand color="yellow">WARUM „LINZ LEBT LIEBE“?</ColorBand>
+  <GiantQuote>
+    <p>
+      „Kirche lebt Liebe” ist die Zusammenfassung unserer Vision, „<span class="font-bold text-brand-blue">Linz lebt Liebe</span>” ist die Zusammenfassung unserer Mission. Das ist unser Auftrag, dafür setzen wir uns ein!
+    </p>
+    <p>
+      Wir träumen davon, dass die Menschen von Linz und Umgebung Gott, den Ursprung der wahren Liebe, persönlich kennenlernen.
+    </p>
+    <p>
+      Wir träumen davon, dass die Stadt dafür bekannt wird, dass Gott angebetet wird, dass Menschen in Liebe miteinander leben, dass Fremde willkommen geheißen werden.
+    </p>
+    <p>
+      Wir träumen davon, dass Linz eine Stadt wird, wo Menschen nicht für sich selbst sondern für einen höheren Zweck leben – in den Worten von Jesus:
+    </p>
+    <p>
+      Als Jesus gefragt wurde, was im Leben am Wichtigsten ist, antwortete er: „Du sollst <span class="font-bold text-brand-red">den Herrn, deinen Gott, lieben</span>, von <span class="font-bold text-brand-magenta">ganzem Herzen</span>, mit <span class="font-bold text-brand-orange">ganzer Seele</span> und mit <span class="font-bold text-brand-blue">all deinen Gedanken</span>!´ Das ist das erste und wichtigste Gebot. Ein weiteres ist genauso wichtig: `<span class="font-bold text-brand-red">Liebe deinen Nächsten wie dich selbst</span>.´”
+    </p>
+    <p class="font-bold">Jesus, Die Bibel (Matthäus 22)</p>
+  </GiantQuote>
+  <OutlineLink href="/unser-auftrag-linz-lebt-liebe/">Mehr Infos zu unsereM AuftraG</OutlineLink>
+
+  <GoogleForm id="1GDMtljhVKK3Zo40DBCWfdIthqtjuqIW5qxs3n6XOICw" />
 </Base>

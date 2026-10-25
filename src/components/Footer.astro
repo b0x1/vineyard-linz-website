@@ -5,16 +5,31 @@ import OptimizedImage from './OptimizedImage.astro';
 ---
 
 <footer class="bg-[#181516] py-16 text-white">
-  <div class="mx-auto grid max-w-6xl items-center gap-12 px-4 md:grid-cols-2">
-    <nav class="flex flex-col gap-2">
-      {
-        footerLinks.map((link) => (
-          <a href={withBase(link.href)} class="text-sm text-white/80 hover:text-brand-gold">
-            {link.name}
-          </a>
-        ))
-      }
-    </nav>
+  <div class="mx-auto grid max-w-6xl items-end gap-12 px-4 md:grid-cols-2">
+    <div>
+      <nav class="flex flex-col gap-2">
+        {
+          footerLinks.map((link) => (
+            <a href={withBase(link.href)} class="text-sm text-white/80 hover:text-brand-gold">
+              {link.name}
+            </a>
+          ))
+        }
+      </nav>
+      <div class="mt-8 flex gap-4">
+        {
+          socialLinks.map((social) => (
+            <a
+              href={withBase(social.href)}
+              target={social.href.startsWith('http') ? '_blank' : undefined}
+              rel={social.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+            >
+              <OptimizedImage src={social.icon} alt={social.name} width={32} height={32} class="h-8 w-8 object-contain" />
+            </a>
+          ))
+        }
+      </div>
+    </div>
     <a href={import.meta.env.BASE_URL} class="justify-self-center md:justify-self-end">
       <OptimizedImage
         src="/images/vlinz-logo-mono-red.png"
@@ -24,18 +39,4 @@ import OptimizedImage from './OptimizedImage.astro';
       />
     </a>
   </div>
-  <div class="mt-10 flex justify-center gap-4">
-    {
-      socialLinks.map((social) => (
-        <a
-          href={withBase(social.href)}
-          target={social.href.startsWith('http') ? '_blank' : undefined}
-          rel={social.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-        >
-          <OptimizedImage src={social.icon} alt={social.name} width={32} height={32} class="h-8 w-8 object-contain" />
-        </a>
-      ))
-    }
-  </div>
-  <p class="mt-8 text-center text-xs text-white/50">&copy; {new Date().getFullYear()} Vineyard Linz. Alle Rechte vorbehalten.</p>
 </footer>
